@@ -1,0 +1,25 @@
+# the command to ping the managed nodes,below command to ping all the managed nodes
+
+ansible -i inventory.ini -m ping all
+
+# to ping specific particular server
+
+ansible -i inventory.ini -m ping ubuntu@<ipaddress>
+
+
+
+#below is the inventory file with grouped servers.
+
+[app]
+ubuntu@123:32:45
+ubuntu@123:32:42
+ubuntu@123:32:41
+[DB]
+ubuntu@123:32:46
+ubuntu@123:32:48
+ubuntu@123:32:43
+
+
+#to ping only the app servers,run below command
+
+ansible -i inventory.ini -m ping app
