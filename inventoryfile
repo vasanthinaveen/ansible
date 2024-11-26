@@ -28,5 +28,9 @@ ansible -i inventory.ini -m ping app
 #to list all the files from all the managed nodes in the inventory  from the etc folder
 
 ansible -i inventory.ini -m shell -a "sudo ls /etc/" all
-#adhoc commands to update the files,change permission of the file,
+#adhoc commands used to update the files,change permission of the file,
+
+#run a playbook
+ansible-playbook -i <inventory_file> <playbook_file>.yml
+
 
